@@ -88,17 +88,6 @@ function __main__() {
       set_up_tls_proxy
     fi
   fi
-  if config_exists; then
-    if [[ "$TLS" == "true" ]]; then
-      echo "Config files already exist, exiting"
-      exit 0
-    else
-      echo "ERROR: Config files already exist, exiting"
-      exit 1
-    fi
-  else
-    set_up_config_files
-  fi
 }
 
 __main__ "$@"
