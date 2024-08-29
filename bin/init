@@ -25,11 +25,11 @@ function usage() {
   echo "                adds NGINX config to an existing local configuration"
 }
 
-function config_exists() {
-  [ -f "$TOOLKIT_ROOT/config/overleaf.rc" ] \
-    || [ -f "$TOOLKIT_ROOT/config/variables.env" ] \
-    || [ -f "$TOOLKIT_ROOT/config/version" ]
-}
+#function config_exists() {
+#  [ -f "$TOOLKIT_ROOT/config/overleaf.rc" ] \
+#    || [ -f "$TOOLKIT_ROOT/config/variables.env" ] \
+#    || [ -f "$TOOLKIT_ROOT/config/version" ]
+#}
 
 function tls_config_exists() {
   [ -f "$TOOLKIT_ROOT/config/nginx/nginx.conf" ] \
@@ -37,12 +37,12 @@ function tls_config_exists() {
     || [ -f "$TOOLKIT_ROOT/config/nginx/certs/overleaf_key.pem" ]
 }
 
-function set_up_config_files() {
-  echo "Copying config files to 'config/'"
-  cp "$TOOLKIT_ROOT/lib/config-seed/overleaf.rc" "$TOOLKIT_ROOT/config/"
-  cp "$TOOLKIT_ROOT/lib/config-seed/variables.env" "$TOOLKIT_ROOT/config/"
-  cp "$TOOLKIT_ROOT/lib/config-seed/version" "$TOOLKIT_ROOT/config/"
-}
+#function set_up_config_files() {
+#  echo "Copying config files to 'config/'"
+#  cp "$TOOLKIT_ROOT/lib/config-seed/overleaf.rc" "$TOOLKIT_ROOT/config/"
+#  cp "$TOOLKIT_ROOT/lib/config-seed/variables.env" "$TOOLKIT_ROOT/config/"
+#  cp "$TOOLKIT_ROOT/lib/config-seed/version" "$TOOLKIT_ROOT/config/"
+#}
 
 function set_up_tls_proxy() {
   PRIVATE_KEY="$TOOLKIT_ROOT/config/nginx/certs/overleaf_key.pem"
